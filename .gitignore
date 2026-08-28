@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# React Router generated types
+.react-router/
+
+# Freebuff
+.freebuff/
+
+# Append docs (deleted after reconciliation)
+APPEND-*.md
