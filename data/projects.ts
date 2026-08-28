@@ -21,8 +21,8 @@ export const projects: Project[] = [
     tech: ["Next.js", "Supabase", "Cloudflare R2", "PWA"],
     status: "live",
     featured: true,
-    liveUrl: null, // TODO — verify before send
-    sourceUrl: null, // TODO — verify before send
+    liveUrl: "https://manhaj-sunnah.vercel.app",
+    sourceUrl: "https://github.com/abuAbdur-rahman/manhaj",
   },
   {
     slug: "aqua",
@@ -46,8 +46,8 @@ export const projects: Project[] = [
     tech: ["React 19", "Vite", "TanStack Router", "TanStack Query", "MCP"],
     status: "in-progress",
     featured: false,
-    liveUrl: null, // TODO — verify before send
-    sourceUrl: null, // TODO — verify before send
+    liveUrl: null,
+    sourceUrl: "https://github.com/abuAbdur-rahman/veridex",
   },
   {
     slug: "rentledger",
@@ -58,8 +58,8 @@ export const projects: Project[] = [
     tech: ["Next.js", "Supabase Auth", "Postgres", "React Query"],
     status: "live",
     featured: false,
-    liveUrl: null, // TODO — verify before send
-    sourceUrl: null, // TODO — verify before send
+    liveUrl: "https://rentledger-xi.vercel.app/",
+    sourceUrl: "https://github.com/abuAbdur-rahman/rentledger",
   },
   {
     slug: "sahnaf",
@@ -70,8 +70,8 @@ export const projects: Project[] = [
     tech: ["Next.js", "Drizzle", "Neon", "NextAuth", "ImageKit"],
     status: "live",
     featured: false,
-    liveUrl: null, // TODO — verify before send
-    sourceUrl: null, // TODO — verify before send
+    liveUrl: "https://sahnaf.vercel.app",
+    sourceUrl: "https://github.com/abuAbdur-rahman/sahnaf",
   },
   {
     slug: "nomad",
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     tech: ["Expo", "React Native", "Monaco", "isomorphic-git", "Zustand"],
     status: "in-progress",
     featured: false,
-    liveUrl: null, // TODO — verify before send
-    sourceUrl: null, // TODO — verify before send
+    liveUrl: null,
+    sourceUrl: "https://github.com/abuAbdur-rahman/nomad",
   },
 ];
