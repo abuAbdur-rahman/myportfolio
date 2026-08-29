@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { ArrowRight, Download, Linkedin, Mail } from "lucide-react";
 import { SiGithub, SiX } from "@icons-pack/react-simple-icons";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Navbar } from "../../components/layout/navbar";
 import { Footer } from "../../components/layout/footer";
 import { Badge } from "../../components/ui/badge";
@@ -34,52 +34,52 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="min-w-0 w-full flex-1 overflow-hidden">
         {/* Hero */}
-        <section className="mx-auto max-w-[1280px] px-6 pt-24 pb-16 md:pt-32 md:pb-24">
-          <motion.div
+        <section className="mx-auto w-full max-w-[1280px] px-6 pt-24 pb-16 md:pt-32 md:pb-28">
+          <m.div
             className="max-w-[640px]"
             variants={stagger}
             initial="hidden"
             animate="show"
           >
             {/* Status line */}
-            <motion.p
+            <m.p
               variants={fadeUp}
               className="mb-6 font-mono text-sm text-[var(--text-muted)]"
             >
               ~/portfolio · online
-              <span className="ml-0.5 inline-block w-[1ch] animate-pulse">
+              <span className="cursor-blink" aria-hidden="true">
                 _
               </span>
-            </motion.p>
+            </m.p>
 
             {/* H1 */}
-            <motion.h1
+            <m.h1
               variants={fadeUp}
-              className="text-[clamp(2.5rem,5vw,3.5rem)] font-extrabold leading-tight tracking-tight"
+              className="text-[clamp(2.5rem,5vw,3.5rem)] font-extrabold leading-tight tracking-[-0.03em]"
             >
               Abdulazeez Badmus
-            </motion.h1>
+            </m.h1>
 
             {/* Role */}
-            <motion.p
+            <m.p
               variants={fadeUp}
               className="mt-4 text-lg text-[var(--text-secondary)]"
             >
               React Developer · Full Stack Engineer
-            </motion.p>
+            </m.p>
 
             {/* Tagline */}
-            <motion.p
+            <m.p
               variants={fadeUp}
               className="mt-2 text-base text-[var(--text-muted)]"
             >
               Building products that serve communities.
-            </motion.p>
+            </m.p>
 
             {/* CTAs */}
-            <motion.div
+            <m.div
               variants={fadeUp}
               className="mt-8 flex flex-wrap gap-4"
             >
@@ -89,16 +89,16 @@ export default function Home() {
               >
                 View Projects <ArrowRight size={16} />
               </Link>
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 rounded-md border border-[var(--border)] bg-transparent px-5 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-card)] hover:text-[var(--text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)]"
+              <Link
+                to="/cv"
+                className="inline-flex items-center gap-2 rounded-md border border-[var(--border-accent)] bg-transparent px-5 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-card)] hover:text-[var(--text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)]"
               >
                 Download CV <Download size={16} />
-              </a>
-            </motion.div>
+              </Link>
+            </m.div>
 
             {/* Social icons */}
-            <motion.div
+            <m.div
               variants={fadeUp}
               className="mt-8 flex items-center gap-4"
             >
@@ -114,35 +114,38 @@ export default function Home() {
                   <link.icon size={18} />
                 </a>
               ))}
-            </motion.div>
+            </m.div>
 
             {/* Currently */}
-            <motion.div
+            <m.div
               variants={fadeUp}
               className="mt-10 flex items-center gap-2 font-mono text-xs text-[var(--text-secondary)]"
             >
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
               Currently: React Dev @ Manaknight
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         </section>
 
-        {/* Featured Work */}
-        <section className="mx-auto max-w-[1280px] px-6 pb-24 md:pb-32">
-          <motion.div
+        {/* Featured Work — generous editorial rhythm per Design.md §4 */}
+        <section className="mx-auto w-full max-w-[1280px] px-6 pb-24 md:pb-32 pt-12 md:pt-16">
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
-            <h2 className="mb-8 text-sm font-medium uppercase tracking-widest text-[var(--text-muted)]">
-              Featured Work
-            </h2>
-          </motion.div>
+            <div className="mb-8 flex items-center gap-4">
+              <h2 className="font-mono text-xs font-medium uppercase tracking-widest text-[var(--text-muted)]">
+                Featured Work
+              </h2>
+              <span className="h-px flex-1 bg-[var(--border)]" aria-hidden />
+            </div>
+          </m.div>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid min-w-0 gap-4 md:grid-cols-2">
             {featured.map((project, i) => (
-              <motion.div
+              <m.div
                 key={project.slug}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -155,7 +158,7 @@ export default function Home() {
               >
                 <Link
                   to={`/projects/${project.slug}`}
-                  className="group block rounded-lg border border-[var(--border)] bg-[var(--bg-card)] p-6 transition-colors hover:border-[var(--border-accent)] hover:bg-[var(--bg-card-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)]"
+                  className="group block min-w-0 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--bg-card)] p-6 shadow-[0_1px_2px_rgba(0,0,0,0.4)] transition-colors hover:border-[var(--border-accent)] hover:bg-[var(--bg-card-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)]"
                 >
                   <div className="mb-3 flex items-center justify-between">
                     <span className="font-mono text-xs text-[var(--text-muted)]">
@@ -188,7 +191,7 @@ export default function Home() {
                     )}
                   </div>
                 </Link>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </section>

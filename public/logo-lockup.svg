@@ -1,0 +1,9 @@
+<svg viewBox="0 0 210 56" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abu Abdirrahman logo">
+  <g transform="translate(2,4) scale(0.72)">
+    <path d="M32 14 L17 50" stroke="#e8e4df" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <path d="M32 14 L47 50" stroke="#e8e4df" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <path d="M23 35.6 L41 35.6" stroke="#c2785c" stroke-width="6" stroke-linecap="round" fill="none"/>
+  </g>
+  <text x="60" y="42" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="800" font-size="38" letter-spacing="-1.2" fill="#e8e4df">abu</text>
+  <circle cx="136" cy="30" r="5" fill="#c2785c"/>
+</svg>

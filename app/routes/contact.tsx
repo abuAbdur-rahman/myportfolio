@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { Linkedin, Mail, MapPin } from "lucide-react";
 import { SiGithub, SiX } from "@icons-pack/react-simple-icons";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Navbar } from "../../components/layout/navbar";
 import { Footer } from "../../components/layout/footer";
 import { Input } from "../../components/ui/input";
@@ -39,19 +39,35 @@ const directLinks = [
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
-    // TODO: wire up Resend via api/contact.ts
-    setTimeout(() => setStatus("success"), 1000);
+    const data = new FormData(e.currentTarget);
+    const payload = {
+      name: String(data.get("name") || ""),
+      email: String(data.get("email") || ""),
+      message: String(data.get("message") || ""),
+      website: String(data.get("website") || ""),
+    };
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error(await res.text());
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
     <>
       <Navbar />
-      <main className="mx-auto max-w-[1100px] px-6 pt-24 pb-24 md:pt-32">
+      <main className="mx-auto w-full max-w-[1100px] min-w-0 px-6 pt-24 pb-24 md:pt-32 overflow-hidden">
         {/* Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
@@ -66,11 +82,11 @@ export default function Contact() {
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
             Freelancer · Open to remote work
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Two-column */}
-        <motion.div
-          className="mt-12 grid gap-12 md:grid-cols-[1fr_1.5fr]"
+        <m.div
+          className="mt-12 grid min-w-0 gap-12 md:grid-cols-[1fr_1.5fr]"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -147,7 +163,7 @@ export default function Contact() {
                     minLength={10}
                     rows={5}
                     placeholder="What's on your mind?"
-                    className="flex w-full rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 py-2 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)] disabled:cursor-not-allowed disabled:opacity-50"
+                    className="flex w-full rounded-md border border-[var(--border)] bg-[var(--bg-card)] px-3 py-2 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] hover:border-[var(--border-accent)] focus-visible:border-[var(--border-accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)] disabled:cursor-not-allowed disabled:opacity-50"
                   />
                 </div>
 
@@ -167,7 +183,7 @@ export default function Contact() {
               </form>
             )}
           </div>
-        </motion.div>
+        </m.div>
       </main>
       <Footer />
     </>

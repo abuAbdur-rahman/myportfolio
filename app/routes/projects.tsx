@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { ArrowRight, Code2, ExternalLink } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Navbar } from "../../components/layout/navbar";
 import { Footer } from "../../components/layout/footer";
 import { Badge } from "../../components/ui/badge";
@@ -23,10 +23,10 @@ export default function Projects() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="min-w-0 w-full flex-1 overflow-hidden">
         {/* Header */}
-        <section className="mx-auto max-w-[1280px] px-6 pt-24 pb-12 md:pt-32">
-          <motion.div
+        <section className="mx-auto w-full max-w-[1280px] px-6 pt-24 pb-12 md:pt-32">
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
@@ -38,38 +38,40 @@ export default function Projects() {
               Six products. Each one solves a real problem — or is honest about
               still being built.
             </p>
-          </motion.div>
+          </m.div>
         </section>
 
         {/* Featured Row */}
-        <section className="mx-auto max-w-[1280px] px-6 pb-16">
-          <motion.div
+        <section className="mx-auto w-full max-w-[1280px] px-6 pb-16">
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="mb-4 text-xs font-medium uppercase tracking-widest text-[var(--text-muted)]"
+            className="mb-4 flex items-center gap-4 font-mono text-xs font-medium uppercase tracking-widest text-[var(--text-muted)]"
           >
-            ★ Featured
-          </motion.div>
+            Featured
+            <span className="h-px flex-1 bg-[var(--border)]" aria-hidden />
+          </m.div>
 
-          <motion.div
-            className="grid gap-6 md:grid-cols-2"
+          <m.div
+            className="grid min-w-0 gap-6 md:grid-cols-2"
             variants={stagger}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
           >
             {featured.map((project) => (
-              <motion.div key={project.slug} variants={fadeUp}>
+              <m.div key={project.slug} variants={fadeUp}>
                 <Link
                   to={`/projects/${project.slug}`}
-                  className="group block overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--bg-card)] transition-colors hover:border-[var(--border-accent)] hover:bg-[var(--bg-card-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)]"
+                  className="group block overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--bg-card)] shadow-[0_1px_3px_rgba(0,0,0,0.5)] transition-colors hover:border-[var(--border-accent)] hover:bg-[var(--bg-card-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)]"
                 >
-                  {/* Screenshot placeholder */}
-                  <div className="flex aspect-[16/9] items-center justify-center bg-[var(--bg-surface)]">
-                    <span className="font-mono text-sm text-[var(--text-muted)]">
-                      {project.title}
+                  {/* Screenshot placeholder — subtle warm gradient per Design.md §1: typography is hero, no stock image */}
+                  <div className="relative flex aspect-[16/9] items-center justify-center overflow-hidden bg-[var(--bg-surface)]">
+                    <div className="absolute inset-0 opacity-[0.06]" style={{background: `radial-gradient(600px 300px at 50% 0%, var(--accent) 0%, transparent 60%)`}} />
+                    <span className="relative font-mono text-sm tracking-widest text-[var(--text-muted)]">
+                      {project.title} — {project.label.toLowerCase()}
                     </span>
                   </div>
 
@@ -119,30 +121,30 @@ export default function Projects() {
                     </div>
                   </div>
                 </Link>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
         </section>
 
         {/* Divider */}
-        <div className="mx-auto max-w-[1280px] px-6">
+        <div className="mx-auto w-full max-w-[1280px] px-6">
           <div className="h-px bg-[var(--border)]" />
         </div>
 
         {/* Card Grid */}
-        <section className="mx-auto max-w-[1280px] px-6 py-16">
-          <motion.div
-            className="grid gap-4 sm:grid-cols-2"
+        <section className="mx-auto w-full max-w-[1280px] px-6 py-16">
+          <m.div
+            className="grid min-w-0 gap-4 sm:grid-cols-2"
             variants={stagger}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
           >
             {grid.map((project) => (
-              <motion.div key={project.slug} variants={fadeUp}>
+              <m.div key={project.slug} variants={fadeUp}>
                 <Link
                   to={`/projects/${project.slug}`}
-                  className="group block rounded-lg border border-[var(--border)] bg-[var(--bg-card)] p-6 transition-colors hover:border-[var(--border-accent)] hover:bg-[var(--bg-card-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)]"
+                  className="group block rounded-lg border border-[var(--border)] bg-[var(--bg-card)] p-6 shadow-[0_1px_2px_rgba(0,0,0,0.4)] transition-colors hover:border-[var(--border-accent)] hover:bg-[var(--bg-card-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)]"
                 >
                   <div className="mb-3 flex items-center justify-between">
                     <span className="font-mono text-xs text-[var(--text-muted)]">
@@ -193,9 +195,9 @@ export default function Projects() {
                     </span>
                   </div>
                 </Link>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
         </section>
       </main>
       <Footer />

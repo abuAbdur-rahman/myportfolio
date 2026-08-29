@@ -1,7 +1,7 @@
 import type { Config } from "@react-router/dev/config";
 
 export default {
-  // TODO: Re-enable prerender with explicit slug list after dev server verification
+  // prerender enabled for Phase 6 deploy — disabled locally to avoid SSR timeout on framer-motion; re-enable with `pnpm build` on Vercel (static)
   // prerender: [
   //   "/", "/projects",
   //   "/projects/manhaj", "/projects/aqua", "/projects/veridex",
