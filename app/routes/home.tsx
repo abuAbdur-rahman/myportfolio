@@ -13,7 +13,7 @@ const socialLinks = [
   { icon: SiGithub, href: "https://github.com/abuAbdur-rahman", label: "GitHub" },
   { icon: Linkedin, href: "https://linkedin.com/in/abdulazeez-badmus", label: "LinkedIn" },
   { icon: SiX, href: "https://x.com/abuabdirrahman_", label: "X" },
-  { icon: Mail, href: "mailto:hello@abdulazeez.dev", label: "Email" },
+  { icon: Mail, href: "mailto:abdulazeezadekiilekun@gmail.com", label: "Email" },
 ];
 
 const stagger = {

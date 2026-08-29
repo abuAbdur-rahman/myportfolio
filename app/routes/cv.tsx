@@ -55,7 +55,7 @@ export default function CVPage() {
               </div>
               <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-[#6b6660]">
                 <span className="inline-flex items-center gap-1.5">
-                  <Mail size={12} /> hello@abdulazeez.dev
+                  <Mail size={12} /> abdulazeezadekiilekun@gmail.com
                 </span>
                 <span className="inline-flex items-center gap-1.5">
                   <Github size={12} /> github.com/abuAbdur-rahman

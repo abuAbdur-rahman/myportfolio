@@ -11,7 +11,6 @@ dist/
 .env.*.local
 
 # IDE
-.vscode/
 .idea/
 *.swp
 *.swo
@@ -28,3 +27,13 @@ Thumbs.db
 
 # Append docs (deleted after reconciliation)
 APPEND-*.md
+
+# Design preview screenshots
+.preview-*.png
+
+# Lighthouse reports
+lighthouse.*/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore

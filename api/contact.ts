@@ -30,8 +30,8 @@ export default async function handler(req: Request): Promise<Response> {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO || "hello@abdulazeez.dev";
-  const from = process.env.CONTACT_FROM || "portfolio@abdulazeez.dev";
+  const to = process.env.CONTACT_TO || "abdulazeezadekiilekun@gmail.com";
+  const from = process.env.CONTACT_FROM || "abdulazeezadekiilekun@gmail.com";
 
   // Dev fallback — no key set, log and pretend success so form can be tested without Resend
   if (!apiKey) {

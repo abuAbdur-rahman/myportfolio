@@ -11,8 +11,8 @@ import { Input } from "../../components/ui/input";
 const directLinks = [
   {
     icon: Mail,
-    label: "hello@abdulazeez.dev",
-    href: "mailto:hello@abdulazeez.dev",
+    label: "abdulazeezadekiilekun@gmail.com",
+    href: "mailto:abdulazeezadekiilekun@gmail.com",
   },
   {
     icon: SiGithub,

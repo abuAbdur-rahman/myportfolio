@@ -32,7 +32,7 @@ export const projects: Project[] = [
     tagline:
       "A native macOS-mannered desktop for WSL Ubuntu — Finder, Terminal, Editor, Spotlight, Spaces — driven by a Rust/Axum daemon.",
     tech: ["Tauri", "Rust", "Axum", "React", "TypeScript", "WebSocket", "WSL2", "Monaco"],
-    status: "in-progress",
+    status: "live",
     featured: true,
     liveUrl: null,
     sourceUrl: "https://github.com/abuAbdur-rahman/aqua",
@@ -44,9 +44,9 @@ export const projects: Project[] = [
     title: "Veridex",
     tagline: "QA tracker + MCP server for AI agents.",
     tech: ["React 19", "Vite", "TanStack Router", "TanStack Query", "MCP"],
-    status: "in-progress",
+    status: "live",
     featured: false,
-    liveUrl: null,
+    liveUrl: "https://veridex-app-three.vercel.app/",
     sourceUrl: "https://github.com/abuAbdur-rahman/veridex",
   },
   {

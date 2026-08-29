@@ -58,7 +58,7 @@ export function generateCV() {
   doc.setFont("helvetica", "normal");
   doc.setTextColor(textSecondary.r, textSecondary.g, textSecondary.b);
   const contacts = [
-    "hello@abdulazeez.dev",
+    "abdulazeezadekiilekun@gmail.com",
     "github.com/abuAbdur-rahman",
     "linkedin.com/in/abdulazeez-badmus",
     "Ilorin, Nigeria",

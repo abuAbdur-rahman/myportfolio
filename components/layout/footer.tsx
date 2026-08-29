@@ -19,7 +19,7 @@ const socialLinks = [
   },
   {
     icon: Mail,
-    href: "mailto:hello@abdulazeez.dev",
+    href: "mailto:abdulazeezadekiilekun@gmail.com",
     label: "Email",
   },
 ];
