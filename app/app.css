@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  --color-bg-primary: #111110;
+  --color-bg-surface: #1a1918;
+  --color-bg-card: #1f1e1d;
+  --color-bg-card-hover: #262524;
+
+  --color-border: #2a2928;
+  --color-border-accent: #3d3b38;
+
+  --color-text-primary: #e8e4df;
+  --color-text-secondary: #9a9590;
+  --color-text-muted: #6b6660;
+
+  --color-accent: #c2785c;
+  --color-accent-dim: rgba(194, 120, 92, 0.12);
+  --color-accent-hover: #d4896a;
+
+  --color-accent-2: #7c9a6b;
+
+  --color-red: #c75c5c;
+  --color-red-dim: rgba(199, 92, 92, 0.12);
+
+  --color-tag-bg: #1f1e1d;
+  --color-tag-border: #2a2928;
+  --color-tag-text: #b5aea8;
+}
+
+:root {
+  --bg-primary: #111110;
+  --bg-surface: #1a1918;
+  --bg-card: #1f1e1d;
+  --bg-card-hover: #262524;
+
+  --border: #2a2928;
+  --border-accent: #3d3b38;
+
+  --text-primary: #e8e4df;
+  --text-secondary: #9a9590;
+  --text-muted: #6b6660;
+
+  --accent: #c2785c;
+  --accent-dim: rgba(194, 120, 92, 0.12);
+  --accent-hover: #d4896a;
+
+  --accent-2: #7c9a6b;
+
+  --red: #c75c5c;
+  --red-dim: rgba(199, 92, 92, 0.12);
+
+  --tag-bg: #1f1e1d;
+  --tag-border: #2a2928;
+  --tag-text: #b5aea8;
+}
+
+html {
+  color-scheme: dark;
+  overflow-x: clip;
+  scrollbar-gutter: stable;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+  max-width: 100vw;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Hero cursor — CSS steps() blink per Design.md §7, no JS, hidden under reduced-motion */
+@keyframes cursor-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.cursor-blink {
+  display: inline-block;
+  width: 1ch;
+  animation: cursor-blink 1.2s steps(1) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cursor-blink { animation: none; opacity: 0; }
+  /* Disable Framer Motion transforms, keep opacity fades — Design.md §6 */
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Visible focus rings — 2px accent offset per Design.md §10 */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Hard fallback for centered containers — guarantees centering even if Tailwind JIT misses arbitrary values */
+.mx-auto { margin-inline: auto; }
+.max-w-\[640px\] { max-width: 640px; }
+.max-w-\[1100px\] { max-width: 1100px; }
+.max-w-\[1280px\] { max-width: 1280px; }
+.px-6 { padding-inline: 1.5rem; }
+.w-full { width: 100%; }
+.min-w-0 { min-width: 0; }
+.overflow-hidden { overflow: hidden; }

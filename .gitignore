@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# React Router generated types
+.react-router/
+
+# Freebuff
+.freebuff/
+
+# Append docs (deleted after reconciliation)
+APPEND-*.md
+
+# Design preview screenshots
+.preview-*.png
+
+# Lighthouse reports
+lighthouse.*/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
