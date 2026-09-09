@@ -1,0 +1,6 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abu Abdirrahman logo mark">
+  <rect x="3" y="3" width="58" height="58" rx="14" fill="#1a1918" stroke="#2a2928" stroke-width="1.5"/>
+  <path d="M32 15 L18 49" stroke="#e8e4df" stroke-width="6.5" stroke-linecap="round" fill="none"/>
+  <path d="M32 15 L46 49" stroke="#e8e4df" stroke-width="6.5" stroke-linecap="round" fill="none"/>
+  <path d="M23.5 36 L40.5 36" stroke="#c2785c" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+</svg>
