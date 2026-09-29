@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "react-router dev",
-    "build": "react-router build",
-    "start": "react-router-serve ./build/server/index.js"
+    "dev": "node init && react-router dev",
+    "build": "node init && react-router build",
+    "start": "node init && react-router-serve ./build/server/index.js"
   },
   "dependencies": {
     "@fontsource/inter": "^5.1.1",
