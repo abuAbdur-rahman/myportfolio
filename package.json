@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "react-router dev",
-    "build": "react-router build",
-    "start": "react-router-serve ./build/server/index.js"
+    "dev": "node init && react-router dev",
+    "build": "node init && react-router build",
+    "start": "node init && react-router-serve ./build/server/index.js"
   },
   "dependencies": {
     "@fontsource/inter": "^5.1.1",
@@ -32,6 +32,6 @@
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.7",
     "typescript": "^5.8.3",
-    "vite": "^8.2.2"
+    "vite": "^8.2.4"
   }
 }
